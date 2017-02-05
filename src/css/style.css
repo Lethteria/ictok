@@ -1,0 +1,158 @@
+* a, a:hover, a:active, a:focus {
+  text-decoration: none; }
+
+.btn:active:focus, .btn:focus, button:focus {
+  outline: none;
+  text-decoration: double; }
+
+.form-control {
+  border-radius: 0; }
+
+.form-control.btn {
+  text-transform: uppercase;
+  border-radius: 0; }
+
+.fa-icon:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+header {
+  height: 672px;
+  background: url("../img/header-background.jpg") center;
+  background-size: cover; }
+
+.header-title {
+  width: 70%;
+  margin-top: 120px;
+  padding: 10px 0;
+  background-color: rgba(62, 102, 146, 0.7); }
+  .header-title h1 {
+    color: #ffffff; }
+  .header-title h3 {
+    color: #d9e9fa; }
+
+nav.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  font-size: 16px;
+  background-color: rgba(244, 255, 243, 0.7);
+  border-radius: 0; }
+  nav.navbar .navbar-toggle {
+    float: left; }
+  nav.navbar .navbar-right {
+    float: right; }
+    nav.navbar .navbar-right a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: #1c3f65; }
+  nav.navbar .navbar-collapse li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #376597; }
+
+.navbar-header {
+  float: right; }
+
+.discount-form {
+  font-size: 24px;
+  color: #ffffff;
+  background-color: #224c79; }
+  .discount-form .description {
+    margin: 3% 5% 3% 0; }
+  .discount-form form {
+    margin-top: -37%;
+    padding: 5% 10%;
+    color: #1c3f65;
+    background-color: rgba(183, 208, 236, 0.85); }
+  .discount-form .btn {
+    color: #ffffff;
+    background-color: #1c3f65; }
+
+.about-water {
+  padding-bottom: 1%;
+  color: #1f446d;
+  font-size: 18px;
+  /*.fa {
+        font-size: 18px;
+    }
+    .fa:before {
+        font-size: 36px;
+    }*/ }
+  .about-water h2 {
+    margin-top: 3%;
+    margin-bottom: 3%; }
+  .about-water .fa-icon:before {
+    display: block;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 40px;
+    color: #4e7f9c; }
+
+.water-mineral {
+  color: #ffffff;
+  background: url("../img/water-mineral-background.jpg") center;
+  background-size: cover; }
+
+.water-mineral-item {
+  margin: 2% 0 0 25%;
+  font-size: 16px; }
+  .water-mineral-item p {
+    margin-bottom: 15px; }
+  .water-mineral-item .fa-icon:before {
+    font-size: 20px;
+    margin-right: 20px; }
+
+.our-product {
+  color: #1f446d; }
+  .our-product h2 {
+    margin-top: 5%; }
+
+.product-item-title span {
+  color: #71b6df; }
+
+.product-item-foto {
+  width: 35%; }
+
+.product-item-description {
+  width: 64%;
+  display: inline-block; }
+
+@media (min-width: 768px) {
+  /*nav {
+
+        .navbar-toggle {
+            display: block;
+        }
+    }*/ }
+
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none; }
+  .navbar-toggle {
+    display: block; }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+  .navbar-collapse.collapse {
+    display: none !important; }
+  .navbar-collapse.in {
+    display: block !important; }
+  .navbar-nav {
+    float: none !important;
+    margin: 7.5px -15px; }
+  .navbar-nav > li {
+    float: none; }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .navbar-right li {
+    display: inline-block; }
+  /* .navbar-toggle {
+            display: none;
+        }*/ }
