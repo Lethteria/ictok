@@ -9,6 +9,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!--link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
+    <script type="text/javascript">
+        VK.init({apiId: 5860409, onlyWidgets: true});
+    </script>
+
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -23,8 +33,8 @@
                 <h3>Доставка чистой воды в Таганроге и Ростовской области</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <img src="img/img-buttle.png" alt="" class="img-responsive">
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                    <img src="img/img-buttle1.png" alt="" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -40,17 +50,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 <ul class="nav navbar-right">
-                    <li><a href="#"><i class="fa fa-mobile" aria-hidden="true"></i>+7(932)488-89-99</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-phone" aria-hidden="true"></i>Заказать звонок</a></li>
+                    <li><a href="#" class="fa-icon fa-mobile">+7(932)488-89-99</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal" class="fa-icon fa-phone">Заказать звонок</a></li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Предложения</a></li>
-                    <li><a href="#">Сертификаты</a></li>
-                    <li><a href="#">Специальное предложение</a></li>
-                    <li><a href="#">Отзывы</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#" class="hover-line">Предложения</a></li>
+                    <li><a href="#" class="hover-line">Сертификаты</a></li>
+                    <li><a href="#" class="hover-line">Специальное предложение</a></li>
+                    <li><a href="#" class="hover-line">Отзывы</a></li>
+                    <li><a href="#" class="hover-line">Контакты</a></li>
                 </ul>
             </div>
 
@@ -70,13 +80,13 @@
                             Сделайте заказ на воду и получите скидку 10%!
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Tel">
+                            <input type="number" class="form-control" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn" placeholder="Заказать">
+                            <input type="submit" class="form-control btn" value="Заказать">
                         </div>
                     </form>
                 </div>
@@ -114,13 +124,15 @@
             <h2>НАШИ ПРЕДЛОЖЕНИЯ</h2>
 
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="thumbnail">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div>
                         <h3 class="product-item-title">Кристальный исток бутыль 19л <br>
                             <span>90 руб.</span></h3>
                         <div class="product-item">
-                            <!--div class="product-item-foto"></div-->
-                            <img src="img/img-buttle.png" alt="" class="product-item-foto">
+                            <div class="product-item-foto">
+                                <img src="img/img-buttle1.png" class="img-responsive" alt="">
+                            </div>
+
                             <div class="product-item-description">
                                 <p>Доставка до двери , на любой этаж !</p>
                                 <p>Оптовая цена: от 1000 шт. в неделю 30 руб.</p>
@@ -131,12 +143,14 @@
                     </div>
 
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="thumbnail">
-                        <h3>Кристальный исток на разлив <br>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div>
+                        <h3 class="product-item-title">Кристальный исток на разлив <br>
                             <span>600 руб. - 1 куб.м. /1 литр - 60 копеек</span></h3>
                         <div class="product-item">
-                            <img src="img/vodovoz.png" alt="" class="product-item-foto">
+                            <div class="product-item-foto">
+                                <img src="img/vodovoz1.png" alt="" class="img-responsive">
+                            </div>
                             <div class="product-item-description">
                                 <p>Размещаем оборудование для реализации воды на вашей площади
                                     ( магазины,торговые центры и т.д.) за свой счёт!</p>
@@ -151,12 +165,13 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h3>Помпа механическая для воды Aqua Work Dolphin Eco <br>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h3 class="product-item-title">Помпа механическая для воды Aqua Work Dolphin Eco <br>
                         <span>360 руб.</span></h3>
                     <div class="product-item">
-                        <!--div class="product-item-foto"></div-->
-                        <img src="img/pompa.jpg" alt="" class="product-item-foto">
+                        <div class="product-item-foto">
+                            <img src="img/pompa1.png" class="img-responsive" alt="">
+                        </div>
                         <div class="product-item-description">
                             <p>Изготовлена из прочного пищевого пластика, для бутылей емкостью 19л. и 12 л.</p>
                             <p>В комплекте специальный ершик для чистки трубок и краника. </p>
@@ -165,11 +180,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h3>Комплект бутыль+помпа+вода <br>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h3 class="product-item-title">Комплект бутыль+помпа+вода <br>
                         <span>600 руб.</span></h3>
                     <div class="product-item">
-                        <img src="img/pompa-s-butilkoi.png" alt="" class="product-item-foto">
+                        <div class="product-item-foto">
+                            <img src="img/pompa-i-butil.png" class="img-responsive" alt="">
+                        </div>
                         <div class="product-item-description">
                             <p>Полноценный набор для употребления питьевой воды.</p>
                             <p>Подходит для дома,  дачи,  отдыха.</p>
@@ -179,11 +196,13 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h3>Новая тара <br>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h3 class="product-item-title">Новая тара <br>
                         <span>220 руб.</span></h3>
                     <div class="product-item">
-                        <img src="img/pustaya-butilka.png" alt="" class="product-item-foto">
+                        <div class="product-item-foto">
+                            <img src="img/pustaya-butil.png" class="img-responsive" alt="">
+                        </div>
                         <div class="product-item-description">
                             <p>Новая бутыль. </p>
                             <p>Материал поликарбонат.</p>
@@ -191,11 +210,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h3>Одноразовые пластиковые стаканчики <br>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h3 class="product-item-title">Одноразовые пластиковые стаканчики <br>
                         <span>100 руб.</span></h3>
                     <div class="product-item">
-                        <img src="img/glasses.jpg" alt="" class="product-item-foto">
+                        <div class="product-item-foto">
+                            <img src="img/glasses.png" class="img-responsive" alt="">
+                        </div>
                         <div class="product-item-description">
                             <p>100шт. в упаковке.</p>
                             <p>Оптовая цена: 65 руб.</p>
@@ -210,20 +231,22 @@
     <section class="order-form">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <h2>ГОТОВЫ СДЕЛАТЬ ЗАКАЗ?</h2>
-                    <p>Оставьте заявку и мы Вам перезвоним</p>
+                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
+                    <div class="order-form-description">
+                        <h2>ГОТОВЫ СДЕЛАТЬ ЗАКАЗ?</h2>
+                        <p>Оставьте заявку и мы Вам перезвоним</p>
+                    </div>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
                     <form action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Tel">
+                            <input type="number" class="form-control" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn btn-default" placeholder="Submit">
+                            <input type="submit" class="form-control btn" value="Заказать">
                         </div>
                     </form>
                 </div>
@@ -235,21 +258,29 @@
         <div class="container">
             <h2>НАШИ СЕРТИФИКАТЫ</h2>
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <img src="img/gost.png" alt=""/>
-                    <p>всё по ГОСТу <br>Р 51232-98</p>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="our-certificate-item">
+                        <img src="img/gost.png" alt=""/>
+                        <p>всё по ГОСТу <br>Р 51232-98</p>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <img src="img/eco.png" alt=""/>
-                    <p>9 степеней <br> очистки</p>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="our-certificate-item">
+                        <img src="img/eco.png" alt=""/>
+                        <p>9 степеней <br> очистки</p>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <i class="fa fa-filter" aria-hidden="true"></i>
-                    <p>"кокосовый" фильтр <br> тонкой очистки  </p>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="our-certificate-item">
+                        <img src="img/filtr.png" alt=""/>
+                        <p>"кокосовый" фильтр <br> тонкой очистки  </p>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <i class="fa fa-hourglass-half" aria-hidden="true"></i>
-                    <p>гарантия хранения <br> 6 мес</p>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <div class="our-certificate-item">
+                        <img src="img/hourglass.png" alt=""/>
+                        <p>гарантия хранения <br> 6 мес</p>
+                    </div>
                 </div>
             </div>
             <div class="our-certificate-scan"></div>
@@ -261,15 +292,18 @@
             <h2>СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</h2>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <h3>СКИДКИ</h3>
-                    <p>Матери одиночки – 80 руб.</p>
-                    <p>Многодетные семьи - 80 руб.</p>
-                    <p>Пенсионеры – 60 руб.</p>
-                    <p>Инвалиды – 60 руб.</p>
-                    <p>Участники ВОВ – Бесплатно.</p>
-                    <br>
-                    <p>ОПТ - 36 руб.</p>
-                    <p>Самовывоз - 30 руб.</p>
+                    <div class="special-discounts">
+                        <h3>СКИДКИ</h3>
+                        <p>Матери одиночки – 80 руб.</p>
+                        <p>Многодетные семьи - 80 руб.</p>
+                        <p>Пенсионеры – 60 руб.</p>
+                        <p>Инвалиды – 60 руб.</p>
+                        <p>Участники ВОВ – Бесплатно.</p>
+                        <br>
+                        <p>ОПТ - 36 руб.</p>
+                        <p>Самовывоз - 30 руб.</p>
+                        <img src="img/img-buttle1.png" alt=""/>
+                    </div>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
                     <form action="">
@@ -278,13 +312,13 @@
                                 <span>и мы предоставим Вам скидку</span></h3>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Tel">
+                            <input type="number" class="form-control" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn btn-default" placeholder="Submit">
+                            <input type="submit" class="form-control btn" value="Заказать">
                         </div>
                     </form>
                 </div>
@@ -295,25 +329,33 @@
     <section class="comment-form">
         <div class="container">
             <h2 class="text-center">ОСТАВИТЬ ОТЗЫВ</h2>
+            <div class="comments">
+                <div id="vk_comments"></div>
+                <script type="text/javascript">
+                    VK.Widgets.Comments("vk_comments", {limit: 5, width: "900", attach: "*"});
+                </script>
+            </div>
         </div>
     </section>
 
     <section class="our-contact">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                    <h2>КОНТАКТЫ</h2> <br>
-                    <h3>Склад с готовой продукцией</h3>
-                    <p>347900, Ростовская обл. г.Таганрог, ул.Фрунзе,100</p>
-                    <br>
-                    <h3>ГРАФИК РАБОТЫ</h3>
-                    <p>пн-вс 8:00-21:00</p>
-                    <br>
-                    <p><span>тел.:</span> +7(932)488-89-99</p>
-                    <p><span>сайт:</span> kristalnii-istok.ru</p>
-                    <p><span>e-mail:</span> Info@kristalnii-istok.ru</p>
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                    <div class="our-contact-content">
+                        <h2>КОНТАКТЫ</h2> <br>
+                        <h4>Склад с готовой продукцией</h4>
+                        <p>347900, Ростовская обл. г.Таганрог, ул.Фрунзе,100</p>
+                        <br>
+                        <h4>ГРАФИК РАБОТЫ</h4>
+                        <p>пн-вс 8:00-21:00</p>
+                        <br>
+                        <p><span>тел.:</span> +7(932)488-89-99</p>
+                        <p><span>сайт:</span> kristalnii-istok.ru</p>
+                        <p><span>e-mail:</span> Info@kristalnii-istok.ru</p>
+                    </div>
                 </div>
-                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
                     <iframe src="https://api-maps.yandex.ua/frame/v1/-/CZhZbF3Q" width="100%" height="400" frameborder="0"></iframe>
                 </div>
             </div>
@@ -326,14 +368,14 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <input type="text" class="form-control" placeholder="Name">
-                        <input type="number" class="form-control" placeholder="Tel">
+                        <input type="text" class="form-control" placeholder="Ваше имя*">
+                        <input type="number" class="form-control" placeholder="Ваш телефон*">
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <textarea name="" cols="30" rows="5" class="form-control" placeholder="Name"></textarea>
+                        <textarea name="" cols="30" rows="4" class="form-control" placeholder="Введите текст"></textarea>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <input type="submit" class="form-control btn btn-default" placeholder="Submit">
+                        <input type="submit" class="form-control btn" value="Заказать">
                     </div>
                 </div>
             </form>
@@ -346,28 +388,28 @@
         </div>
         <ul>
             <li class="social-icon">
-                <a href=""><i class="fa fa-vk" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-vk"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-facebook"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-odnoklassniki"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-instagram"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-phone" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-phone"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-whatsapp"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-skype" aria-hidden="true"></i><img src="" alt=""></a>
+                <a href="" class="fa-icon fa-skype"></a>
             </li>
             <li class="social-icon">
-                <a href=""><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                <a href="" class="fa-icon fa-paper-plane"></a>
             </li>
         </ul>
     </footer>
@@ -382,16 +424,16 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" class="form-control" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Tel">
+                            <input type="number" class="form-control" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <textarea name=""  class="form-control" cols="30" rows="4" placeholder="text"></textarea>
+                            <textarea name=""  class="form-control" cols="30" rows="4" placeholder="Введите текст"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn btn-default" data-dismiss="modal" placeholder="Submit">
+                            <input type="submit" class="form-control btn btn-default" data-dismiss="modal">
                         </div>
                     </form>
                 </div>
@@ -404,11 +446,26 @@
 
 
        <a href="#!" id="back-to-top" class="hide-arrow">
-           <img src="img/" alt="back-to-top" class="responsive-img">
+           <img src="img/to-top.png" alt="back-to-top" class="responsive-img">
        </a>
 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
        <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $( document ).ready(function(){
+            var pos = $('header').find('.header-title').offset().top;
+
+            $(window).scroll(function(){
+                if ($(window).scrollTop() >= pos){
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+                //console.log(pos);
+            });
+        });
+    </script>
     <script>
         $(document).ready(function(){
             $('#back-to-top').click(function(){
