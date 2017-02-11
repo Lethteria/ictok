@@ -18,6 +18,8 @@
     <script type="text/javascript">
         VK.init({apiId: 5860409, onlyWidgets: true});
     </script>
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?139"></script>
 
 
     <!--[if lt IE 9]>
@@ -34,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
-                    <img src="img/img-buttle1.png" alt="" class="img-responsive">
+                    <img src="img/img-bottle.png" alt="" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -43,15 +45,12 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" id="gamburger" data-target="#bs-example-navbar-collapse-1">
                     <span class="icon-bar"></span>
                 </button>
                 <ul class="nav navbar-right">
                     <li><a href="#" class="fa-icon fa-mobile">+7(932)488-89-99</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal" class="fa-icon fa-phone">Заказать звонок</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal" class="fa-icon fa-phone"><span>Заказать звонок</span></a></li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -80,13 +79,13 @@
                             Сделайте заказ на воду и получите скидку 10%!
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя*">
+                            <input type="text" class="form-control valid-item" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Ваш телефон*">
+                            <input type="number" class="form-control valid-item" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn" value="Заказать">
+                            <input type="submit" class="form-control btn" value="ПОЛУЧИТЬ СКИДКУ">
                         </div>
                     </form>
                 </div>
@@ -119,6 +118,72 @@
         </div>
     </section>
 
+    <section class="stock">
+        <div class="container">
+            <div class="stock-animation clearfix">
+                <div class="animation-img">
+                    <img src="img/bottle.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="animation-fig">
+                    <img src="img/plus.png" alt="" class="img-responsive">
+                </div>
+                <div class="animation-img">
+                    <img src="img/bottle.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="animation-fig">
+                    <img src="img/equal.png" alt="" class="img-responsive">
+                </div>
+                <div class="animation-img">
+                    <img src="img/discount.png" alt="" class="img-responsive">
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-1 col-xs-12">
+                        <div class="stock-item">
+                            <img src="img/bottle-icon.png" alt=""/>
+                            <span class="fa-icon fa-times bottle-amount">2</span>
+                        <span class="stock-item-price">
+                            <span>80 руб </span><br>за бутыль
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-12">
+                        <div class="stock-item">
+                            <img src="img/bottle-icon.png" alt=""/>
+                            <span class="fa-icon fa-times bottle-amount">3</span>
+                        <span class="stock-item-price">
+                            <span>75 руб </span><br>за бутыль
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-1 col-xs-12">
+                        <div class="stock-item">
+                            <img src="img/bottle-icon.png" alt=""/>
+                            <span class="fa-icon fa-times bottle-amount">4</span>
+                        <span class="stock-item-price">
+                            <span>70 руб</span> <br>за бутыль
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-12">
+                        <div class="stock-item">
+                            <img src="img/bottle-icon.png" alt=""/>
+                            <span class="fa-icon fa-times bottle-amount">5</span>
+                        <span class="stock-item-price">
+                            <span>65 руб </span><br>за бутыль
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <section class="our-product">
         <div class="container">
             <h2>НАШИ ПРЕДЛОЖЕНИЯ</h2>
@@ -130,7 +195,7 @@
                             <span>90 руб.</span></h3>
                         <div class="product-item">
                             <div class="product-item-foto">
-                                <img src="img/img-buttle1.png" class="img-responsive" alt="">
+                                <img src="img/img-bottle.png" class="img-responsive" alt="">
                             </div>
 
                             <div class="product-item-description">
@@ -149,7 +214,7 @@
                             <span>600 руб. - 1 куб.м. /1 литр - 60 копеек</span></h3>
                         <div class="product-item">
                             <div class="product-item-foto">
-                                <img src="img/vodovoz1.png" alt="" class="img-responsive">
+                                <img src="img/vodovoz.png" alt="" class="img-responsive">
                             </div>
                             <div class="product-item-description">
                                 <p>Размещаем оборудование для реализации воды на вашей площади
@@ -170,7 +235,7 @@
                         <span>360 руб.</span></h3>
                     <div class="product-item">
                         <div class="product-item-foto">
-                            <img src="img/pompa1.png" class="img-responsive" alt="">
+                            <img src="img/pompa.png" class="img-responsive" alt="">
                         </div>
                         <div class="product-item-description">
                             <p>Изготовлена из прочного пищевого пластика, для бутылей емкостью 19л. и 12 л.</p>
@@ -185,7 +250,7 @@
                         <span>600 руб.</span></h3>
                     <div class="product-item">
                         <div class="product-item-foto">
-                            <img src="img/pompa-i-butil.png" class="img-responsive" alt="">
+                            <img src="img/pompa-i-bottle.png" class="img-responsive" alt="">
                         </div>
                         <div class="product-item-description">
                             <p>Полноценный набор для употребления питьевой воды.</p>
@@ -201,7 +266,7 @@
                         <span>220 руб.</span></h3>
                     <div class="product-item">
                         <div class="product-item-foto">
-                            <img src="img/pustaya-butil.png" class="img-responsive" alt="">
+                            <img src="img/empty-bottle.png" class="img-responsive" alt="">
                         </div>
                         <div class="product-item-description">
                             <p>Новая бутыль. </p>
@@ -240,13 +305,13 @@
                 <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
                     <form action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя*">
+                            <input type="text" class="form-control valid-item" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Ваш телефон*">
+                            <input type="number" class="form-control valid-item" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn" value="Заказать">
+                            <input type="submit" class="form-control btn" value="ПОЛУЧИТЬ ЗВОНОК">
                         </div>
                     </form>
                 </div>
@@ -302,7 +367,7 @@
                         <br>
                         <p>ОПТ - 36 руб.</p>
                         <p>Самовывоз - 30 руб.</p>
-                        <img src="img/img-buttle1.png" alt=""/>
+                        <img src="img/img-bottle.png" alt=""/>
                     </div>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
@@ -312,13 +377,13 @@
                                 <span>и мы предоставим Вам скидку</span></h3>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя*">
+                            <input type="text" class="form-control valid-item" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Ваш телефон*">
+                            <input type="number" class="form-control valid-item" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="form-control btn" value="Заказать">
+                            <input type="submit" class="form-control btn" value="ПОЛУЧИТЬ СКИДКУ">
                         </div>
                     </form>
                 </div>
@@ -365,42 +430,55 @@
     <section class="question-form">
         <div class="container">
             <h4 class="text-center">ОСТАЛИСЬ ВОПРОСЫ? ОСТАВЬТЕ КОНТАКТЫ И МЫ СВЯЖЕМСЯ С ВАМИ</h4>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <input type="text" class="form-control" placeholder="Ваше имя*">
-                        <input type="number" class="form-control" placeholder="Ваш телефон*">
+
+            <form action="" class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control valid-item" placeholder="Ваше имя*">
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <input type="number" class="form-control valid-item" placeholder="Ваш телефон*">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
                         <textarea name="" cols="30" rows="4" class="form-control" placeholder="Введите текст"></textarea>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <input type="submit" class="form-control btn" value="Заказать">
-                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <input type="submit" class="form-control btn" value="Получить звонок">
                 </div>
             </form>
         </div>
     </section>
     <footer>
         <div class="text-center">
-            <h3>КРИСТАЛЬНЫЙ ИСТОК</h3>
-            <p>Доставка чистой воды в Таганроге и Ростовской области</p>
+            <div class="footer-title">
+                <h3>КРИСТАЛЬНЫЙ ИСТОК</h3>
+                <p>Доставка чистой воды в Таганроге и Ростовской области</p>
+            </div>
         </div>
         <ul>
             <li class="social-icon">
-                <a href="" class="fa-icon fa-vk"></a>
+                <!--a href="" class="fa-icon fa-vk"></a-->
+                    <script type="text/javascript"><!--
+                    document.write(VK.Share.button(false,{type: "custom", text: "<img src=\"https://vk.com/images/share_32.png\" width=\"32\" height=\"32\" />"}));
+                    --></script>
+
             </li>
             <li class="social-icon">
-                <a href="" class="fa-icon fa-facebook"></a>
+                <a href="#!" onClick="openWin2()"class="fa-icon fa-facebook"></a>
             </li>
             <li class="social-icon">
-                <a href="" class="fa-icon fa-odnoklassniki"></a>
+                <div id="ok_shareWidget"></div>
+                <!--a href="" class="fa-icon fa-odnoklassniki"></a-->
             </li>
             <li class="social-icon">
-                <a href="" class="fa-icon fa-instagram"></a>
+                <a href="https://www.instagram.com/taganrogdostavkavodi" class="fa-icon fa-instagram">
+                </a>
             </li>
             <li class="social-icon">
-                <a href="" class="fa-icon fa-phone"></a>
+                <a id="share-viber" class="fa-icon fa-phone"></a>
             </li>
             <li class="social-icon">
                 <a href="" class="fa-icon fa-whatsapp"></a>
@@ -417,23 +495,23 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Заказать обратный звонок</h4>
                 </div>
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше имя*">
+                            <input type="text" class="form-control valid-item" placeholder="Ваше имя*">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Ваш телефон*">
+                            <input type="number" class="form-control valid-item" placeholder="Ваш телефон*">
                         </div>
                         <div class="form-group">
                             <textarea name=""  class="form-control" cols="30" rows="4" placeholder="Введите текст"></textarea>
                         </div>
-                        <div class="form-group">
-                            <input type="submit" class="form-control btn btn-default" data-dismiss="modal">
+                        <div class="form-group text-center">
+                            <input type="submit" class="form-control btn" data-dismiss="modal">
                         </div>
                     </form>
                 </div>
@@ -441,13 +519,33 @@
         </div>
     </div>
 
-
-
+    <div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p>Ваша заявка отправлена</p>
+                        <p>Спасибо за заказ</p>
+                        <button type="button" class="close btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
        <a href="#!" id="back-to-top" class="hide-arrow">
            <img src="img/to-top.png" alt="back-to-top" class="responsive-img">
        </a>
+
+    <!-- VK Widget -->
+    <div id="vk_community_messages"></div>
+    <script type="text/javascript">
+        VK.Widgets.CommunityMessages("vk_community_messages", 127607773, {expanded: "1",disableExpandChatSound: "1",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
+    </script>
 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
        <script src="js/bootstrap.min.js"></script>
@@ -462,7 +560,6 @@
                 } else {
                     $('#back-to-top').removeClass('show');
                 }
-                //console.log(pos);
             });
         });
     </script>
@@ -474,6 +571,79 @@
             });
         });
     </script>
+
+    <script type="text/javascript">
+        //var delay_popup = 5000;
+        //setTimeout("$('.header-title').addClass('title-faid-in')", 500);
+        setTimeout("$('.header-title').find('h1').addClass('strip-faid-in')", 2000);
+    </script>
+
+    <script>
+        $('#gamburger').click(function(){
+            var $this = $(this);
+            $this.parents('nav').toggleClass('nav-open');
+            $this.children().toggleClass('icon-bar-close');
+        });
+    </script>
+
+    <script>
+        //----------валидация------------//
+        var myValidate=function(){
+
+            $('.form-group',this).each(function(){
+                if($('.valid-item',this).val() == ''){
+                    $(this).addClass('has-error has-feedback');
+                    $('.valid-item',this).after('<span class="fa-icon fa-exclamation form-control-feedback"></span>');
+                } else {
+                    $(this).removeClass('has-error');
+                    $(this).find('span').remove();
+                }
+            });
+            };
+
+        $('form').submit(function(){
+            myValidate.call(this);
+            if ( $('.form-group',this).hasClass('has-error') ){
+                return false;
+            } else {
+                $('#sendModal').modal('show');
+            }
+        });
+    </script>
+
+    <!--fb-->
+    <script><!-- hide
+    function openWin2() {
+        myWin=open("http://www.facebook.com/sharer.php?u=http://kristalnii-istok.ru/","displayWindow","width=520,height=300,left=350,top=170,status=no,toolbar=no,menubar=no");
+    }
+    // -->
+    </script>
+
+<!--Однокласники-->
+    <script>
+        !function (d, id, did, st, title, description, image) {
+            var js = d.createElement("script");
+            js.src = "https://connect.ok.ru/connect.js";
+            js.onload = js.onreadystatechange = function () {
+                if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                    if (!this.executed) {
+                        this.executed = true;
+                        setTimeout(function () {
+                            OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+                        }, 0);
+                    }
+                }};
+            d.documentElement.appendChild(js);
+        }(document,"ok_shareWidget",document.URL,'{"sz":30,"st":"rounded","nc":1,"nt":1}',"","","");
+    </script>
+
+    <!--viber-->
+    <script>
+        var buttonID = "share-viber";
+        var text = "Поделиться: ";
+        document.getElementById(buttonID).setAttribute('href', "viber://forward?text=" + encodeURIComponent(text + " " + window.location.href));
+    </script>
+
 
 </body>
 </html>

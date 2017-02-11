@@ -11,7 +11,8 @@
 
 .form-control.btn {
   text-transform: uppercase;
-  border-radius: 0; }
+  border-radius: 0;
+  border-width: 2px; }
 
 .form-control.btn:active:focus, .form-control.btn:focus {
   outline: none;
@@ -65,8 +66,7 @@ body {
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -webkit-font-smoothing: antialiased; }
 
 header {
   height: 672px;
@@ -80,13 +80,18 @@ header {
   margin-top: 120px;
   padding: 10px 0;
   background-color: rgba(62, 102, 146, 0.7);
+  /*opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.8s, transform 0.8s;
+    -webkit-transform: scale(0);
+    transform: scale(0);*/
   /*animation:
     slideRight 0.5s ease-in 2s backwards,
     fadeOut 1s linear 4.4s backwards;*/ }
   .header-title h1 {
-    position: relative;
     font-family: 'Ubuntu', sans-serif;
-    color: #ffffff; }
+    color: #ffffff;
+    position: relative; }
     .header-title h1:after {
       position: absolute;
       content: "";
@@ -99,8 +104,16 @@ header {
       transition: all 0.5s; }
     .header-title h1:hover:after {
       transform: scale(0); }
+    .header-title h1:after {
+      transform: scale(0); }
+  .header-title .strip-faid-in:after {
+    transform: scale(1); }
   .header-title h3 {
     color: #d9e9fa; }
+
+.title-faid-in {
+  opacity: 1;
+  transform: scale(1); }
 
 nav.navbar {
   position: absolute;
@@ -111,7 +124,60 @@ nav.navbar {
   background-color: rgba(244, 255, 243, 0.7);
   border-radius: 0; }
   nav.navbar .navbar-toggle {
-    float: left; }
+    margin-left: 10px;
+    float: left;
+    border: none;
+    background: #224c79;
+    border-radius: 0; }
+    nav.navbar .navbar-toggle .icon-bar {
+      position: relative;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      background-color: #ffffff;
+      -webkit-transition-property: background-color, -webkit-transform;
+      -moz-transition-property: background-color, -moz-transform;
+      -o-transition-property: background-color, -o-transform;
+      transition-property: background-color, transform;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s; }
+      nav.navbar .navbar-toggle .icon-bar:before, nav.navbar .navbar-toggle .icon-bar:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 1px;
+        -webkit-transition-property: background-color, -webkit-transform;
+        -moz-transition-property: background-color, -moz-transform;
+        -o-transition-property: background-color, -o-transform;
+        transition-property: background-color, transform;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s; }
+      nav.navbar .navbar-toggle .icon-bar:before {
+        top: -6px; }
+      nav.navbar .navbar-toggle .icon-bar:after {
+        bottom: -6px; }
+    nav.navbar .navbar-toggle .icon-bar-close {
+      background-color: transparent; }
+      nav.navbar .navbar-toggle .icon-bar-close:before {
+        -webkit-transform: translateY(6px) rotate(37deg);
+        -moz-transform: translateY(6px) rotate(37deg);
+        -ms-transform: translateY(6px) rotate(37deg);
+        -o-transform: translateY(6px) rotate(37deg);
+        transform: translateY(6px) rotate(37deg); }
+      nav.navbar .navbar-toggle .icon-bar-close:after {
+        -webkit-transform: translateY(-6px) rotate(-37deg);
+        -moz-transform: translateY(-6px) rotate(-37deg);
+        -ms-transform: translateY(-6px) rotate(-37deg);
+        -o-transform: translateY(-6px) rotate(-37deg);
+        transform: translateY(-6px) rotate(-37deg); }
+    nav.navbar .navbar-toggle:focus, nav.navbar .navbar-toggle:hover {
+      background-color: #224c79; }
   nav.navbar .navbar-right {
     float: right;
     font-size: 18px; }
@@ -125,12 +191,14 @@ nav.navbar {
         transform: scale(1.1); }
     nav.navbar .navbar-right .fa-icon:before {
       margin-right: 5px; }
-  nav.navbar .navbar-collapse li a {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #376597; }
-  nav.navbar .navbar-collapse li > a:hover {
-    color: #204771; }
+  nav.navbar .navbar-collapse {
+    border-color: #224c79; }
+    nav.navbar .navbar-collapse li a {
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #376597; }
+    nav.navbar .navbar-collapse li > a:hover {
+      color: #204771; }
   nav.navbar .hover-line {
     position: relative;
     padding-bottom: 3px; }
@@ -145,12 +213,9 @@ nav.navbar {
     height: 2px;
     background-color: #204771;
     transition: width .5s ease-in-out; }
-  nav.navbar .navbar-toggle {
-    border: none;
-    background: #224c79;
-    border-radius: 0; }
-    nav.navbar .navbar-toggle .icon-bar {
-      background-color: #ffffff; }
+
+nav.nav-open {
+  background-color: #e5eef8; }
 
 .navbar-header {
   float: right; }
@@ -166,13 +231,70 @@ nav.navbar {
     padding: 5% 10%;
     color: #1c3f65;
     background-color: rgba(183, 208, 236, 0.85); }
+    .discount-form form .fa-icon:before {
+      font-size: 14px;
+      vertical-align: super;
+      margin-top: 10px; }
   .discount-form .btn {
     color: #ffffff;
     background-color: #1c3f65; }
     .discount-form .btn:hover {
-      border: 1px solid #1c3f65;
+      border: 2px solid #1c3f65;
       background-color: #315984; }
 
+.stock {
+  padding-bottom: 5px;
+  background: url("../img/water-backgr.jpg") bottom no-repeat;
+  background-size: contain;
+  border-bottom: 1px solid #4e7f9c; }
+
+.stock-animation {
+  width: 45%;
+  margin: 30px auto 50px; }
+  .stock-animation .animation-img {
+    width: 26%;
+    float: left; }
+    .stock-animation .animation-img:last-child {
+      width: 38%;
+      padding: 0 20px; }
+  .stock-animation .animation-fig {
+    width: 5%;
+    float: left;
+    margin-top: 11%; }
+
+.stock-item {
+  margin-bottom: 20px;
+  background-color: rgba(230, 233, 236, 0.8);
+  padding: 10px 15px;
+  border: 1px solid #6c96b9;
+  border-radius: 4px; }
+  .stock-item img {
+    width: 30px;
+    height: 45px; }
+  .stock-item .bottle-amount {
+    margin: 0 20px 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28px;
+    font-weight: bold;
+    color: #6a6c6f; }
+  .stock-item .fa-times:before {
+    font-size: 20px;
+    vertical-align: top;
+    margin-top: 23%;
+    margin-right: 10px; }
+
+.stock-item-price {
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle; }
+  .stock-item-price span {
+    font-size: 24px;
+    color: #158ac1; }
+
+/*.wrap {
+    background-color: $blue-light-color;
+}*/
 .about-water {
   padding-bottom: 4%;
   color: #1f446d;
@@ -189,7 +311,7 @@ nav.navbar {
   .about-water .fa-icon:before {
     display: block;
     float: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-right: 20px;
     font-size: 40px;
     color: #4e7f9c; }
@@ -236,9 +358,7 @@ nav.navbar {
   display: inline-block;
   width: 35%;
   padding: 1%;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 5%; }
+  overflow: hidden; }
   .product-item-foto img {
     -moz-transition: all 1s ease-out;
     -o-transition: all 1s ease-out;
@@ -266,7 +386,7 @@ nav.navbar {
     color: #ffffff;
     background-color: #1c3f65; }
     .order-form .btn:hover {
-      border: 1px solid #1c3f65;
+      border: 2px solid #1c3f65;
       background-color: #315984; }
 
 .order-form-description {
@@ -338,7 +458,7 @@ nav.navbar {
       color: #ffffff;
       background-color: #158ac1; }
       .special-discount-form form .btn:hover {
-        border: 1px solid #158ac1;
+        border: 2px solid #158ac1;
         background-color: #2ea4db; }
   .special-discount-form .special-discounts {
     position: relative;
@@ -389,7 +509,7 @@ nav.navbar {
     margin: 20px 0;
     padding-bottom: 10px;
     border-bottom: 1px solid #8a99aa; }
-  .question-form input {
+  .question-form input, .question-form textarea {
     margin-bottom: 25px; }
   .question-form .btn {
     color: #ffffff;
@@ -405,6 +525,23 @@ footer {
   color: #ffffff;
   background-color: #072e57;
   text-align: center; }
+  footer .footer-title {
+    margin: auto;
+    display: inline-block; }
+  footer h3 {
+    position: relative; }
+    footer h3:after {
+      position: absolute;
+      content: "";
+      left: 30%;
+      bottom: -5px;
+      width: 40%;
+      height: 1px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      transition: all 0.5s; }
+    footer h3:hover:after {
+      transform: scale(0); }
   footer p {
     color: #d9e9fa; }
   footer ul {
@@ -415,6 +552,10 @@ footer {
       margin: 0 5px;
       list-style: none;
       display: inline-block; }
+  footer .social-icon {
+    transition: all 0.5s; }
+    footer .social-icon:hover {
+      transform: scale(1.2); }
   footer .fa-icon {
     width: 30px;
     height: 30px;
@@ -459,6 +600,53 @@ footer {
     transition-duration: 0.1s !important;
     opacity: 1; }
 
+#myModal .modal-body {
+  padding: 0; }
+
+.modal-content form {
+  padding: 5% 10%;
+  color: #1c3f65;
+  background-color: rgba(183, 208, 236, 0.85); }
+
+.modal-content .btn {
+  width: 50%;
+  color: #ffffff;
+  background-color: #1c3f65; }
+  .modal-content .btn:hover {
+    border: 2px solid #1c3f65;
+    background-color: #315984; }
+
+.modal-header {
+  color: #ffffff;
+  background-color: #1c3f65; }
+  .modal-header button span {
+    color: #ffffff; }
+  .modal-header button:active, .modal-header button:focus {
+    outline: none; }
+
+#sendModal .modal-body button.close {
+  float: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: 2px solid;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  opacity: 1; }
+  #sendModal .modal-body button.close:active, #sendModal .modal-body button.close:focus {
+    outline: none; }
+
+#ok_shareWidget {
+  width: 30px !important;
+  height: 30px !important;
+  display: inline-block !important;
+  vertical-align: middle; }
+
 @media (max-width: 1199px) {
   header img {
     margin-top: 42%; }
@@ -470,6 +658,16 @@ footer {
     font-size: 24px; }
   h3 {
     font-size: 20px; }
+  .wrap .container {
+    width: 100%; }
+  .stock-item .fa-times:before {
+    font-size: 18px; }
+  .stock-item .bottle-amount {
+    font-size: 24px; }
+  .stock-item-price {
+    font-size: 16px; }
+    .stock-item-price span {
+      font-size: 18px; }
   .product-item-title {
     height: 65px; }
   .order-form-description {
@@ -507,6 +705,8 @@ footer {
       display: inline-block; }
   .discount-form .description {
     margin-top: 6%; }
+  .stock-animation {
+    width: 55%; }
   /* .navbar-toggle {
             display: none;
         }*/
@@ -514,6 +714,8 @@ footer {
     height: auto; }
   .product-item-foto {
     width: 25%; }
+  .product-item-description {
+    vertical-align: bottom; }
   .order-form-description {
     font-size: 16px; }
     .order-form-description h2 {
@@ -538,8 +740,142 @@ footer {
 
 @media (max-width: 767px) {
   header {
-    height: 500px; }
+    height: 470px; }
     header img {
       margin-top: 10%; }
-  .discount-form form {
-    margin-top: 0; } }
+    header h1 {
+      font-size: 24px; }
+  nav.navbar .navbar-toggle {
+    margin-left: 10px; }
+  .about-water {
+    font-size: 14px; }
+    .about-water h2 {
+      font-size: 18px; }
+    .about-water p {
+      width: 85%;
+      margin: 0 auto 10px; }
+    .about-water .fa-icon:before {
+      font-size: 24px; }
+  h2 {
+    font-size: 20px; }
+  h3 {
+    font-size: 18px; }
+  .discount-form {
+    font-size: 18px; }
+    .discount-form .description {
+      margin-top: 2%;
+      font-size: 18px; }
+    .discount-form form {
+      margin-top: 0;
+      margin-bottom: 20px; }
+  .water-mineral-item {
+    font-size: 14px;
+    margin-left: 17%; }
+    .water-mineral-item .fa-icon:before {
+      margin-right: 10px;
+      font-size: 16px; }
+  .wrap .container {
+    width: 80%;
+    text-align: center; }
+  .stock-animation {
+    width: 65%;
+    margin-bottom: 30px; }
+  .stock-item {
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 50px; }
+  .stock-item-price {
+    font-size: 14px; }
+  .product-item-description {
+    margin-top: 10px;
+    font-size: 14px; }
+  .product-item-foto {
+    width: 20%; }
+  .product-item {
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px; }
+  .order-form {
+    padding: 15px 0 0; }
+  .order-form-description {
+    margin-bottom: 15px;
+    padding: 1px 0 0 12px;
+    height: 100px; }
+  .our-certificate-item {
+    font-size: 15px; }
+    .our-certificate-item img {
+      width: 50px; }
+  .special-discount-form {
+    font-size: 14px; }
+    .special-discount-form .special-discounts {
+      height: auto;
+      margin-bottom: 20px; }
+      .special-discount-form .special-discounts img {
+        right: 0; }
+    .special-discount-form form {
+      padding-top: 5px;
+      padding-bottom: 5px; }
+  .question-form h4 {
+    font-size: 16px; }
+  .our-contact-content {
+    font-size: 14px; }
+    .our-contact-content h2 {
+      font-size: 18px; }
+    .our-contact-content h4 {
+      margin-top: 0;
+      font-size: 16px; }
+  #back-to-top {
+    bottom: 20px;
+    right: -35px; }
+    #back-to-top img {
+      width: 50%; } }
+
+@media (max-width: 560px) {
+  header .col-xs-4 {
+    width: 42%; }
+  .our-product {
+    text-align: center; }
+    .our-product h2:after {
+      right: 0;
+      margin: auto; }
+  .product-item-foto {
+    display: block;
+    margin: 0 auto 10px; }
+  .product-item-description {
+    display: block;
+    width: 100%;
+    text-align: center; }
+  footer ul .social-icon {
+    margin: 0 6% 15px; } }
+
+@media (max-width: 480px) {
+  header {
+    height: 400px; }
+    header .col-xs-4 img {
+      max-width: 150px; }
+  .header-title {
+    width: 95%;
+    margin-top: 75px; }
+  nav .fa-phone span {
+    display: none; }
+  h3 {
+    font-size: 16px; }
+  .discount-form .description {
+    margin: 20px 0;
+    font-size: 16px; }
+  .water-mineral-item {
+    margin-left: 20px; }
+  .stock-animation {
+    width: 80%; }
+  .stock-item {
+    padding-left: 20px;
+    padding-right: 20px; }
+  .product-item-foto {
+    width: 30%; }
+  .our-certificate-item {
+    width: 100%; } }
+
+/*@media  screen and (min-width : 320px) and (max-width : 480px) {}
+@media  screen and (min-width : 481px) and (max-width : 700px) {}
+@media  screen and (min-width : 710px) and (max-width : 1000px) {}
+@media  screen and (min-width : 1001px) and (max-width : 1024px) {}*/

@@ -15,7 +15,9 @@ $light-blue-color: #d9e9fa;
 .form-control.btn {
     text-transform: uppercase;
     border-radius: 0;
+    border-width: 2px;
 }
+
 .form-control.btn:active:focus, .form-control.btn:focus {
     outline: none;
     text-decoration: double;
@@ -24,7 +26,7 @@ $light-blue-color: #d9e9fa;
 @mixin button($background-color) {
     background-color: $background-color;
     &:hover {
-        border: 1px solid $background-color;
+        border: 2px solid $background-color;
         background-color: desaturate(lighten($background-color, 10%),10%);
     }
 }
@@ -41,6 +43,25 @@ $light-blue-color: #d9e9fa;
         height: 2px;
 
         background-color: $strip-color;
+    }
+}
+@mixin header-strip ($height) {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        left: 30%;
+        bottom: -5px;
+
+        width: 40%;
+        height: $height;
+        margin: 0 auto;
+        background-color: #ffffff;
+
+        transition: all 0.5s;
+    }
+    &:hover:after {
+        transform: scale(0);
     }
 }
 input[type='number'] {
@@ -67,7 +88,6 @@ body {
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -84,35 +104,36 @@ header {
     padding: 10px 0;
 
     background-color: rgba(62,102,146, .7); //desaturate((lighten($blue-color,10%)),10%);
+
+    /*opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.8s, transform 0.8s;
+    -webkit-transform: scale(0);
+    transform: scale(0);*/
     //opacity: 0.7;
     h1 {
-        position: relative;
         font-family: 'Ubuntu', sans-serif;
         color: #ffffff;
+        @include header-strip(2px);
         &:after {
-            position: absolute;
-            content: "";
-            left: 30%;
-            bottom: -5px;
-
-            width: 40%;
-            height: 2px;
-            margin: 0 auto;
-            background-color: #ffffff;
-
-            transition: all 0.5s;
-        }
-        &:hover:after {
             transform: scale(0);
         }
     }
+    .strip-faid-in:after {
+        transform: scale(1);
+    }
     h3 {
-        color: #d9e9fa;//desaturate((lighten($blue-color,40%)),90%);
+        color: #d9e9fa;
     }
     /*animation:
     slideRight 0.5s ease-in 2s backwards,
     fadeOut 1s linear 4.4s backwards;*/
 }
+.title-faid-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
 //---------NAV------------//
 nav.navbar {
     position: absolute;
@@ -125,7 +146,72 @@ nav.navbar {
     border-radius: 0;
 
     .navbar-toggle {
+        margin-left: 10px;
         float: left;
+        border: none;
+        background: $blue-color;
+        border-radius: 0;
+        .icon-bar {
+            position: relative;
+            margin-top: 6px;
+            margin-bottom: 6px;
+
+            background-color: #ffffff;
+
+            -webkit-transition-property: background-color, -webkit-transform;
+            -moz-transition-property: background-color, -moz-transform;
+            -o-transition-property: background-color, -o-transform;
+            transition-property: background-color, transform;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            &:before, &:after {
+                position: absolute;
+                content: "";
+                display: block;
+
+                width: 22px;
+                height: 2px;
+                background-color: #ffffff;
+                border-radius: 1px;
+
+                -webkit-transition-property: background-color, -webkit-transform;
+                -moz-transition-property: background-color, -moz-transform;
+                -o-transition-property: background-color, -o-transform;
+                transition-property: background-color, transform;
+                -webkit-transition-duration: 0.3s;
+                -moz-transition-duration: 0.3s;
+                -o-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+            }
+            &:before {
+                top: -6px;
+            }
+            &:after {
+                bottom: -6px;
+            }
+        }
+        .icon-bar-close {
+            background-color: transparent;
+            &:before {
+                -webkit-transform: translateY(6px) rotate(37deg);
+                -moz-transform: translateY(6px) rotate(37deg);
+                -ms-transform: translateY(6px) rotate(37deg);
+                -o-transform: translateY(6px) rotate(37deg);
+                 transform: translateY(6px) rotate(37deg);
+            }
+            &:after {
+                -webkit-transform: translateY(-6px) rotate(-37deg);
+                -moz-transform: translateY(-6px) rotate(-37deg);
+                -ms-transform: translateY(-6px) rotate(-37deg);
+                -o-transform: translateY(-6px) rotate(-37deg);
+                transform: translateY(-6px) rotate(-37deg);
+            }
+        }
+        &:focus,&:hover {
+            background-color: $blue-color;
+        }
     }
     .navbar-right {
         float: right;
@@ -146,6 +232,7 @@ nav.navbar {
         }
     }
     .navbar-collapse {
+        border-color: $blue-color;
         li {
             a {
                 padding-left: 10px;
@@ -177,14 +264,9 @@ nav.navbar {
         background-color: darken($blue-color,2%);
         transition: width .5s ease-in-out;
     }
-    .navbar-toggle {
-        border: none;
-        background: $blue-color;
-        border-radius: 0;
-        .icon-bar {
-            background-color: #ffffff;
-        }
-    }
+}
+nav.nav-open {
+    background-color: lighten($blue-color,63%);//#ffffff;
 }
 .navbar-header {
     float: right;
@@ -204,6 +286,11 @@ nav.navbar {
         padding: 5% 10%;
         color: darken($blue-color, 5%);
         background-color: rgba(183,208,236, .85);
+        .fa-icon:before {
+            font-size: 14px;
+            vertical-align: super;
+            margin-top: 10px;
+        }
     }
     .btn {
         color: #ffffff;
@@ -212,6 +299,75 @@ nav.navbar {
     }
 }
 
+//-------------SECTION stock-animation------------//
+.stock {
+    padding-bottom: 5px;//110px;
+    background: url("../img/water-backgr.jpg") bottom no-repeat;
+    background-size: contain;
+    border-bottom: 1px solid $blue-light-color;
+}
+.stock-animation {
+    width: 45%;
+    margin: 30px auto 50px;
+    .animation-img {
+        //position: relative;
+        width: 26%;
+        float: left;
+        &:last-child {
+            width: 38%;
+            padding: 0 20px;
+            //float: right;
+        }
+    }
+    .animation-fig {
+        width: 5%;
+        float: left;
+        margin-top: 11%;
+    }
+}
+.stock-item {
+    margin-bottom: 20px;
+    background-color:  rgba(230, 233, 236, 0.8);//#eee;
+    padding: 10px 15px;
+    border: 1px solid #6c96b9;
+    border-radius: 4px;
+    //opacity: 0.9;
+   // background-color: $blue-light-color;
+    img {
+        width: 30px;
+        height: 45px;
+    }
+    .bottle-amount {
+        margin: 0 20px 0 10px;
+        display: inline-block;
+        vertical-align: middle;
+
+        font-size: 28px;
+        font-weight: bold;
+        color: #6a6c6f;
+        //color: $blue-color;
+
+    }
+    .fa-times:before {
+        font-size: 20px;
+        vertical-align: top;
+        margin-top: 23%;
+        margin-right: 10px;
+    }
+}
+.stock-item-price {
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+
+    span {
+        font-size: 24px;
+        color: #158ac1;
+    }
+}
+/*.wrap {
+    background-color: $blue-light-color;
+}*/
 //-------------SECTION about-water------------//
 
 .about-water {
@@ -231,7 +387,7 @@ nav.navbar {
     .fa-icon:before {
         display: block;
         float: left;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         margin-right: 20px;
         font-size: 40px;
         color: $blue-light-color;//desaturate((lighten($blue-color,30%)),20%);
@@ -279,8 +435,8 @@ nav.navbar {
     padding: 1%;
     overflow:hidden;
 
-    border: 1px solid #ccc;
-    border-radius: 5%;
+    //border: 1px solid #ccc;
+    //border-radius: 5%;
 
     img {
         -moz-transition: all 1s ease-out;
@@ -441,7 +597,7 @@ nav.navbar {
         padding-bottom: 10px;
         border-bottom: 1px solid desaturate(lighten($blue-color,30%),40%);
     }
-    input {
+    input, textarea {
         margin-bottom: 25px;
     }
     .btn {
@@ -465,6 +621,14 @@ footer {
     color: #ffffff;
     background-color: saturate(darken($blue-color,12%),30%);
     text-align: center;
+    .footer-title {
+        //width: 50%;
+        margin: auto;
+        display: inline-block;
+    }
+    h3 {
+        @include header-strip(1px);
+    }
     p {
         color: #d9e9fa;
     }
@@ -478,11 +642,18 @@ footer {
             display: inline-block;
         }
     }
+    .social-icon {
+        transition: all 0.5s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
     .fa-icon {
         width: 30px;
         height: 30px;
         vertical-align: middle;
         display: inline-block;
+
         color: #ffffff;
         border-radius: 4px;
         background-color: #006600;
@@ -536,7 +707,66 @@ footer {
     }
 }
 
+//--------MODAL-------//
+#myModal {
+    .modal-body {
+        padding: 0;
+    }
+}
+.modal-content {
+    form {
+        padding: 5% 10%;
+        color: darken($blue-color, 5%);
+        background-color: rgba(183,208,236, .85);
+    }
+    .btn {
+        width: 50%;
+        color: #ffffff;
+        //background-color: $color-but;//darken($blue-color, 5%);
+        @include button(darken($blue-color, 5%));
+    }
+}
+.modal-header {
+    color: #ffffff;
+    background-color: darken($blue-color, 5%);
+    button {
+        span {
+            color: #ffffff;
+        }
+        &:active,&:focus {
+            outline: none;
+        }
+    }
+}
+#sendModal {
+    .modal-body {
+        button.close {
+            float: none;
+            text-transform: uppercase;
+            border-radius: 0;
+            border: 2px solid;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            opacity: 1;
+            &:active,&:focus {
+                outline: none;
+            }
+        }
+    }
 
+}
+#ok_shareWidget {
+    width: 30px!important;
+    height: 30px!important;
+    display: inline-block !important;
+    vertical-align: middle;
+}
 @media (max-width: 1199px){
     header {
         img {
@@ -558,6 +788,25 @@ footer {
     }
     h3 {
         font-size: 20px;
+    }
+    .wrap {
+        .container {
+            width: 100%;
+        }
+    }
+    .stock-item {
+        .fa-times:before {
+            font-size: 18px;
+        }
+        .bottle-amount {
+            font-size: 24px;
+        }
+    }
+    .stock-item-price {
+        font-size: 16px;
+        span {
+            font-size: 18px;
+        }
     }
     .product-item-title {
         height: 65px;
@@ -618,6 +867,9 @@ footer {
             margin-top: 6%;
         }
     }
+    .stock-animation {
+        width: 55%;
+    }
        /* .navbar-toggle {
             display: none;
         }*/
@@ -626,6 +878,9 @@ footer {
     }
     .product-item-foto {
         width: 25%;
+    }
+    .product-item-description {
+        vertical-align: bottom;
     }
     .order-form-description {
         font-size: 16px;
@@ -662,20 +917,215 @@ footer {
 }
 @media (max-width: 767px){
     header {
-        height: 500px;
+        height: 470px;
         img {
             margin-top: 10%;
         }
+        h1 {
+            font-size: 24px;
+        }
+    }
+    nav.navbar {
+        .navbar-toggle {
+            margin-left: 10px;
+        }
+    }
+    .about-water {
+        font-size: 14px;
+        h2 {
+            font-size: 18px;
+        }
+        p {
+            width: 85%;
+            margin: 0 auto 10px;
+        }
+        .fa-icon:before {
+            font-size: 24px;
+        }
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
     }
     .discount-form {
+        font-size: 18px;
+        .description {
+            margin-top: 2%;
+            font-size: 18px;
+        }
         form {
             margin-top: 0;
+            margin-bottom: 20px;
+        }
+    }
+    .water-mineral-item {
+        font-size: 14px;
+        margin-left: 17%;
+        .fa-icon:before {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+    }
+    .wrap .container {
+        width: 80%;
+        text-align: center;
+    }
+    .stock-animation {
+        width: 65%;
+        margin-bottom: 30px;
+    }
+    .stock-item {
+        display: inline-block;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .stock-item-price {
+        font-size: 14px;
+    }
+    .product-item-description {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .product-item-foto {
+        width: 20%;
+    }
+    .product-item {
+        //margin-top: 5px;
+        margin-bottom: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .order-form {
+        padding: 15px 0 0;
+    }
+    .order-form-description {
+        margin-bottom: 15px;
+        padding: 1px 0 0 12px;
+        height: 100px;
+    }
+    .our-certificate-item {
+        font-size: 15px;
+        img {
+            width: 50px;
+        }
+    }
+    .special-discount-form {
+        font-size: 14px;
+        .special-discounts {
+            height: auto;
+            margin-bottom: 20px;
+            img {
+                right: 0;
+            }
+        }
+        form {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+    .question-form {
+        h4 {
+            font-size: 16px;
+        }
+    }
+    .our-contact-content {
+        font-size: 14px;
+        h2 {
+            font-size: 18px;
+        }
+        h4 {
+            margin-top: 0;
+            font-size: 16px;
+        }
+    }
+    #back-to-top {
+        bottom: 20px;
+        right: -35px;
+        img {
+            width: 50%;
         }
     }
 }
+@media (max-width: 560px){
+    header {
+        .col-xs-4 {
+            width: 42%;
+        }
+    }
+    .our-product {
+        text-align: center;
+        h2:after {
+            right: 0;
+            margin: auto;
+        }
+    }
+    .product-item-foto {
+        display: block;
+        margin: 0 auto 10px;
+    }
+    .product-item-description {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    footer ul .social-icon {
+        margin: 0 6% 15px;
+    }
+}
 
-        @media  screen and (min-width : 320px) and (max-width : 480px) {}
+@media (max-width: 480px){
+    header {
+        height: 400px;
+        .col-xs-4 {
+            //width: 100%;
+            //float: none;
+            //margin: auto;
+            img {
+                max-width: 150px;
+            }
+            //width: 42%;
+        }
+    }
+    .header-title {
+        width: 95%;
+        margin-top: 75px;
+    }
+    nav {
+        .fa-phone {
+            span {
+                display: none;
+            }
+        }
+    }
+    h3 {
+        font-size: 16px;
+    }
+    .discount-form .description {
+        margin: 20px 0;
+        font-size: 16px;
+    }
+    .water-mineral-item {
+        margin-left: 20px;
+    }
+    .stock-animation {
+        width: 80%;
+    }
+    .stock-item {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .product-item-foto {
+        width: 30%;
+    }
+    .our-certificate-item {
+        width: 100%;
+    }
+}
+
+/*@media  screen and (min-width : 320px) and (max-width : 480px) {}
 @media  screen and (min-width : 481px) and (max-width : 700px) {}
 @media  screen and (min-width : 710px) and (max-width : 1000px) {}
-@media  screen and (min-width : 1001px) and (max-width : 1024px) {}
+@media  screen and (min-width : 1001px) and (max-width : 1024px) {}*/
 
