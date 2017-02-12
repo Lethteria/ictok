@@ -19,8 +19,7 @@
         VK.init({apiId: 5860409, onlyWidgets: true});
     </script>
     <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
-    <script type="text/javascript" src="//vk.com/js/api/openapi.js?139"></script>
-
+    <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -121,19 +120,19 @@
     <section class="stock">
         <div class="container">
             <div class="stock-animation clearfix">
-                <div class="animation-img">
+                <div class="animation-img" id="stock-img1">
                     <img src="img/bottle.jpg" alt="" class="img-responsive">
                 </div>
-                <div class="animation-fig">
+                <div class="animation-fig" id="stock-img2">
                     <img src="img/plus.png" alt="" class="img-responsive">
                 </div>
-                <div class="animation-img">
+                <div class="animation-img" id="stock-img3">
                     <img src="img/bottle.jpg" alt="" class="img-responsive">
                 </div>
-                <div class="animation-fig">
+                <div class="animation-fig" id="stock-img4">
                     <img src="img/equal.png" alt="" class="img-responsive">
                 </div>
-                <div class="animation-img">
+                <div class="animation-img" id="stock-img5">
                     <img src="img/discount.png" alt="" class="img-responsive">
                 </div>
             </div>
@@ -326,7 +325,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="our-certificate-item">
                         <img src="img/gost.png" alt=""/>
-                        <p>всё по ГОСТу <br>Р 51232-98</p>
+                        <p>ГОСТ <br>Р 51232-98</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -511,7 +510,7 @@
                             <textarea name=""  class="form-control" cols="30" rows="4" placeholder="Введите текст"></textarea>
                         </div>
                         <div class="form-group text-center">
-                            <input type="submit" class="form-control btn" data-dismiss="modal">
+                            <input type="submit" class="form-control btn">
                         </div>
                     </form>
                 </div>
@@ -541,10 +540,12 @@
            <img src="img/to-top.png" alt="back-to-top" class="responsive-img">
        </a>
 
+
+
     <!-- VK Widget -->
     <div id="vk_community_messages"></div>
     <script type="text/javascript">
-        VK.Widgets.CommunityMessages("vk_community_messages", 127607773, {expanded: "1",disableExpandChatSound: "1",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
+        VK.Widgets.CommunityMessages("vk_community_messages", 127607773, {disableExpandChatSound: "1",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
     </script>
 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -553,7 +554,6 @@
     <script>
         $( document ).ready(function(){
             var pos = $('header').find('.header-title').offset().top;
-
             $(window).scroll(function(){
                 if ($(window).scrollTop() >= pos){
                     $('#back-to-top').addClass('show');
@@ -563,22 +563,51 @@
             });
         });
     </script>
+
+    <script>
+
+        //--------------animate stock!!!!!!!!!!!!!!!!!!!!-----//
+        $( document ).ready(function(){
+            var pos1 = $('.stock-animation').offset().top-$(window).height();
+            $(window).scroll(function(){
+                if ($(window).scrollTop() >= pos1){
+                    var index = 1;
+                    setInterval(function () {
+                        if (index<=5){
+                            $('#stock-img'+index).addClass('stock-show');
+                            index++;
+                        } else {
+                            index == 1;
+                        }
+                    }, 500);
+                } else {
+                    //$('#back-to-top').removeClass('show');
+                }
+            });
+        });
+    </script>
+
     <script>
         $(document).ready(function(){
             $('#back-to-top').click(function(){
                 $('html, body').animate({scrollTop: 0},500);
-                //return false;
             });
         });
     </script>
 
     <script type="text/javascript">
-        //var delay_popup = 5000;
         //setTimeout("$('.header-title').addClass('title-faid-in')", 500);
         setTimeout("$('.header-title').find('h1').addClass('strip-faid-in')", 2000);
     </script>
 
     <script>
+        $('.product-item').hover(function(){
+            $('img',this).toggleClass('img-scale');
+        });
+    </script>
+
+    <script>
+        //----------menu------------//
         $('#gamburger').click(function(){
             var $this = $(this);
             $this.parents('nav').toggleClass('nav-open');
@@ -600,13 +629,13 @@
                 }
             });
             };
-
         $('form').submit(function(){
             myValidate.call(this);
             if ( $('.form-group',this).hasClass('has-error') ){
                 return false;
             } else {
                 $('#sendModal').modal('show');
+                return false;//!!!!!!!!!!!
             }
         });
     </script>

@@ -313,6 +313,9 @@ nav.nav-open {
         //position: relative;
         width: 26%;
         float: left;
+
+        opacity: 0;
+        transition: opacity 1s ease;
         &:last-child {
             width: 38%;
             padding: 0 20px;
@@ -323,6 +326,12 @@ nav.nav-open {
         width: 5%;
         float: left;
         margin-top: 11%;
+
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    .stock-show {
+        opacity: 1;
     }
 }
 .stock-item {
@@ -420,9 +429,6 @@ nav.nav-open {
         @include strip (darken($blue-color, 3%),10%);
     }
 }
-/*.product-item {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-}*/
 .product-item-title {
     height: 80px;
     span {
@@ -443,11 +449,10 @@ nav.nav-open {
         -o-transition: all 1s ease-out;
         -webkit-transition: all 0.5s ease-out;
     }
-    img:hover{
+    .img-scale {
         -webkit-transform: scale(1.1);
         -moz-transform: scale(1.1);
         -o-transform: scale(1.1);
-        cursor: pointer;
     }
 }
 .product-item-description {
@@ -457,7 +462,11 @@ nav.nav-open {
     vertical-align: top;
 
     font-size: 16px;
-    color: #5f6368;
+    color: darken($blue-color, 4%);
+    //color: #5f6368;
+}
+.product-item:hover {
+    cursor: pointer;
 }
 
 //---------------SECTION order-form------------//
@@ -550,9 +559,9 @@ nav.nav-open {
 
         img {
             position: absolute;
-            width: 30%;
+            width: 45%;//30%;
             bottom: 0;
-            right: -8%;
+            right: -12%;//-8%;
         }
     }
 }
@@ -691,8 +700,8 @@ footer {
 
 #back-to-top {
     position: fixed;
-    bottom: 10%;
-    right: 5%;
+    bottom: 85px;//10%;
+    right: 21px;//5%;
     transition: opacity 0.5s ease-out 0.2s;
 }
 
@@ -1008,7 +1017,7 @@ footer {
     .our-certificate-item {
         font-size: 15px;
         img {
-            width: 50px;
+            height: 50px;
         }
     }
     .special-discount-form {
@@ -1017,6 +1026,7 @@ footer {
             height: auto;
             margin-bottom: 20px;
             img {
+                width: 30%;
                 right: 0;
             }
         }
@@ -1041,10 +1051,10 @@ footer {
         }
     }
     #back-to-top {
-        bottom: 20px;
-        right: -35px;
+        //bottom: 20px;
+        right: 12px;
         img {
-            width: 50%;
+            width: 70%;
         }
     }
 }
