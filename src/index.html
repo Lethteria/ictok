@@ -9,17 +9,20 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <!--link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"-->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/slick-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.6" media="screen">
+    <link rel="stylesheet" href="css/jquery.fancybox-buttons.css?v=1.0.5" media="screen">
+    <link rel="stylesheet" href="css/jquery.fancybox-thumbs.css?v=1.0.7" media="screen">
 
     <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
     <script type="text/javascript">
         VK.init({apiId: 5860409, onlyWidgets: true});
     </script>
-    <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
-    <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
+    <!--script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script-->
+    <!--script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script-->
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -27,7 +30,7 @@
     <![endif]-->
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="container">
             <div class="header-title center-block text-center">
                 <h1>КРИСТАЛЬНЫЙ ИСТОК</h1>
@@ -41,24 +44,24 @@
         </div>
     </header>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default" role="navigation" id="menu">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" id="gamburger" data-target="#bs-example-navbar-collapse-1">
                     <span class="icon-bar"></span>
                 </button>
                 <ul class="nav navbar-right">
-                    <li><a href="#" class="fa-icon fa-mobile">+7(932)488-89-99</a></li>
+                    <li><a href="tel:+7(932)488-89-99" class="fa-icon fa-mobile">+7(932)488-89-99</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#myModal" class="fa-icon fa-phone"><span>Заказать звонок</span></a></li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" class="hover-line">Предложения</a></li>
-                    <li><a href="#" class="hover-line">Сертификаты</a></li>
-                    <li><a href="#" class="hover-line">Специальное предложение</a></li>
-                    <li><a href="#" class="hover-line">Отзывы</a></li>
-                    <li><a href="#" class="hover-line">Контакты</a></li>
+                    <li><a href="#our-product" class="hover-line">Предложения</a></li>
+                    <li><a href="#our-certificate" class="hover-line">Сертификаты</a></li>
+                    <li><a href="#special-discount" class="hover-line">Специальное предложение</a></li>
+                    <li><a href="#comments" class="hover-line">Отзывы</a></li>
+                    <li><a href="#our-contact" class="hover-line">Контакты</a></li>
                 </ul>
             </div>
 
@@ -183,7 +186,7 @@
 
     </section>
 
-    <section class="our-product">
+    <section class="our-product" id="our-product">
         <div class="container">
             <h2>НАШИ ПРЕДЛОЖЕНИЯ</h2>
 
@@ -318,7 +321,7 @@
         </div>
     </section>
 
-    <section class="our-certificate">
+    <section class="our-certificate" id="our-certificate">
         <div class="container">
             <h2>НАШИ СЕРТИФИКАТЫ</h2>
             <div class="row">
@@ -347,11 +350,34 @@
                     </div>
                 </div>
             </div>
-            <div class="our-certificate-scan"></div>
+            <div class="our-certificate-scan">
+                <div class="slider responsive">
+                    <div>
+                        <a class="fancybox" rel="group" href="img/scan1.jpg">
+                            <img src="img/scan1.jpg" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="fancybox" rel="group" href="img/scan4.jpg">
+                            <img src="img/scan4.jpg" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="fancybox" rel="group" href="img/scan2.jpg">
+                            <img src="img/scan2.jpg" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="fancybox" rel="group" href="img/scan3.jpg">
+                            <img src="img/scan3.jpg" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="special-discount-form">
+    <section class="special-discount-form" id="special-discount">
         <div class="container">
             <h2>СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</h2>
             <div class="row">
@@ -390,7 +416,7 @@
         </div>
     </section>
 
-    <section class="comment-form">
+    <section class="comment-form" id="comments">
         <div class="container">
             <h2 class="text-center">ОСТАВИТЬ ОТЗЫВ</h2>
             <div class="comments">
@@ -402,7 +428,7 @@
         </div>
     </section>
 
-    <section class="our-contact">
+    <section class="our-contact" id="our-contact">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
@@ -457,21 +483,21 @@
                 <p>Доставка чистой воды в Таганроге и Ростовской области</p>
             </div>
         </div>
-        <ul>
-            <li class="social-icon">
+        <!--ul>
+            <li class="social-icon"=-->
                 <!--a href="" class="fa-icon fa-vk"></a-->
-                    <script type="text/javascript"><!--
+                    <!--script type="text/javascript"><!--
                     document.write(VK.Share.button(false,{type: "custom", text: "<img src=\"https://vk.com/images/share_32.png\" width=\"32\" height=\"32\" />"}));
-                    --></script>
+                    --><!--/script>
 
-            </li>
-            <li class="social-icon">
+            </li-->
+            <!--li class="social-icon">
                 <a href="#!" onClick="openWin2()"class="fa-icon fa-facebook"></a>
             </li>
             <li class="social-icon">
-                <div id="ok_shareWidget"></div>
+                <div id="ok_shareWidget"></div-->
                 <!--a href="" class="fa-icon fa-odnoklassniki"></a-->
-            </li>
+            <!--/li>
             <li class="social-icon">
                 <a href="https://www.instagram.com/taganrogdostavkavodi" class="fa-icon fa-instagram">
                 </a>
@@ -488,7 +514,10 @@
             <li class="social-icon">
                 <a href="" class="fa-icon fa-paper-plane"></a>
             </li>
-        </ul>
+        </ul-->
+        <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,viber,whatsapp,skype,telegram"></div>
+
+
     </footer>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -541,6 +570,9 @@
        </a>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- VK Widget -->
     <div id="vk_community_messages"></div>
@@ -548,12 +580,68 @@
         VK.Widgets.CommunityMessages("vk_community_messages", 127607773, {disableExpandChatSound: "1",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос?"});
     </script>
 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-       <script src="js/bootstrap.min.js"></script>
+    <!-- jquery-migrate для slick-->
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- slick-->
+     <script src="js/slick.min.js"></script>
+
+    <!-- fancybox-->
+    <script type="text/javascript" src="js/jquery.mousewheel.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+    <!-- поделиться от яндекс-->
+    <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="//yastatic.net/share2/share.js"></script>
+
+    <!-- my script-->
+    <script>
+        $(".slider").not('.slick-initialized').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+    </script>
+
 
     <script>
         $( document ).ready(function(){
-            var pos = $('header').find('.header-title').offset().top;
+            var pos = $('#header').find('.header-title').offset().top;
             $(window).scroll(function(){
                 if ($(window).scrollTop() >= pos){
                     $('#back-to-top').addClass('show');
@@ -588,10 +676,19 @@
     </script>
 
     <script>
+        //----------Плавный переход по ссылкам------------//
         $(document).ready(function(){
             $('#back-to-top').click(function(){
                 $('html, body').animate({scrollTop: 0},500);
             });
+
+            $('#menu').find('a').click(function(e){
+                e.preventDefault();
+                var id  = $(this).attr('href'),
+                        top = $(id).offset().top;
+                $('body,html').animate({scrollTop: top}, 1000);
+            });
+
         });
     </script>
 
@@ -641,15 +738,15 @@
     </script>
 
     <!--fb-->
-    <script><!-- hide
+    <!--script><!-- hide
     function openWin2() {
         myWin=open("http://www.facebook.com/sharer.php?u=http://kristalnii-istok.ru/","displayWindow","width=520,height=300,left=350,top=170,status=no,toolbar=no,menubar=no");
     }
     // -->
-    </script>
+    <!--/script>
 
 <!--Однокласники-->
-    <script>
+    <!--script>
         !function (d, id, did, st, title, description, image) {
             var js = d.createElement("script");
             js.src = "https://connect.ok.ru/connect.js";
@@ -667,11 +764,11 @@
     </script>
 
     <!--viber-->
-    <script>
+    <!--script>
         var buttonID = "share-viber";
         var text = "Поделиться: ";
         document.getElementById(buttonID).setAttribute('href', "viber://forward?text=" + encodeURIComponent(text + " " + window.location.href));
-    </script>
+    </script-->
 
 
 </body>

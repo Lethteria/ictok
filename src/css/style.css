@@ -443,6 +443,50 @@ nav.nav-open {
   .our-certificate-item:hover {
     cursor: pointer; }
 
+.our-certificate-scan {
+  width: 70%;
+  margin: 20px auto 0; }
+  .our-certificate-scan .slick-slide {
+    position: relative;
+    overflow: hidden; }
+    .our-certificate-scan .slick-slide .fancybox:before {
+      position: absolute;
+      top: 17%;
+      right: 18%;
+      bottom: 17%;
+      left: 18%;
+      border: 2px solid #6cb2ef;
+      border-radius: 2px;
+      box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
+      content: '';
+      opacity: 1;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: scale3d(1.4, 1.4, 1);
+      transform: scale3d(1.4, 1.4, 1); }
+    .our-certificate-scan .slick-slide .fancybox:after {
+      position: absolute;
+      content: "";
+      top: 15%;
+      right: 17%;
+      bottom: 15%;
+      left: 17%;
+      border: 1px solid #ffffff;
+      -webkit-transform: scale3d(1.4, 1.4, 1);
+      transform: scale3d(1, 1, 1); }
+    .our-certificate-scan .slick-slide:hover .fancybox:before {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1); }
+    .our-certificate-scan .slick-slide:hover .fancybox:after {
+      -webkit-transform: scale3d(1.4, 1.4, 1);
+      transform: scale3d(1.4, 1.4, 1); }
+
+.slick-initialized .slick-slide {
+  padding: 10px; }
+  .slick-initialized .slick-slide img {
+    padding: 10px; }
+
 .special-discount-form {
   padding-bottom: 30px;
   font-size: 16px;
@@ -529,7 +573,62 @@ footer {
   padding: 1% 0;
   color: #ffffff;
   background-color: #072e57;
-  text-align: center; }
+  text-align: center;
+  /*ul {
+        margin-top: 10px;
+        padding: 0;
+        display: inline-block;
+        .social-icon {
+            margin: 0 5px;
+            list-style: none;
+            display: inline-block;
+        }
+    }
+    .social-icon {
+        transition: all 0.5s;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    .fa-icon {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        display: inline-block;
+
+        color: #ffffff;
+        border-radius: 4px;
+        background-color: #006600;
+    }
+    .fa-icon:before {
+        font-size: 18px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .fa-vk {
+        background-color: #48729e;
+    }
+    .fa-facebook {
+        background-color: #3b5998;
+    }
+    .fa-odnoklassniki {
+        background-color: #eb722e;
+    }
+    .fa-instagram {
+        background: linear-gradient(to bottom left, #be16fe, #f1a516);
+    }
+    .fa-phone {
+        background-color: #7b519d;
+    }
+    .fa-whatsapp {
+        background-color: #65bc54;
+    }
+    .fa-skype {
+        background-color: #00aff0;
+    }
+    .fa-paper-plane {
+        background-color: #64a9dc;
+    }*/ }
   footer .footer-title {
     margin: auto;
     display: inline-block; }
@@ -549,46 +648,16 @@ footer {
       transform: scale(0); }
   footer p {
     color: #d9e9fa; }
-  footer ul {
-    margin-top: 10px;
-    padding: 0;
-    display: inline-block; }
-    footer ul .social-icon {
+  footer .ya-share2__container_size_m {
+    margin-top: 10px; }
+    footer .ya-share2__container_size_m .ya-share2__icon {
+      width: 30px;
+      height: 30px; }
+    footer .ya-share2__container_size_m .ya-share2__item {
       margin: 0 5px;
-      list-style: none;
-      display: inline-block; }
-  footer .social-icon {
-    transition: all 0.5s; }
-    footer .social-icon:hover {
-      transform: scale(1.2); }
-  footer .fa-icon {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    display: inline-block;
-    color: #ffffff;
-    border-radius: 4px;
-    background-color: #006600; }
-  footer .fa-icon:before {
-    font-size: 18px;
-    height: 30px;
-    line-height: 30px; }
-  footer .fa-vk {
-    background-color: #48729e; }
-  footer .fa-facebook {
-    background-color: #3b5998; }
-  footer .fa-odnoklassniki {
-    background-color: #eb722e; }
-  footer .fa-instagram {
-    background: linear-gradient(to bottom left, #be16fe, #f1a516); }
-  footer .fa-phone {
-    background-color: #7b519d; }
-  footer .fa-whatsapp {
-    background-color: #65bc54; }
-  footer .fa-skype {
-    background-color: #00aff0; }
-  footer .fa-paper-plane {
-    background-color: #64a9dc; }
+      transition: all 0.5s; }
+      footer .ya-share2__container_size_m .ya-share2__item:hover {
+        transform: scale(1.2); }
 
 #back-to-top {
   position: fixed;
@@ -740,7 +809,10 @@ footer {
       width: 100% !important; }
   .our-contact-content h2 {
     font-size: 24px; }
-  footer ul .social-icon {
+  /*footer ul .social-icon {
+        margin: 0 15px;
+    }*/
+  footer .ya-share2__container_size_m .ya-share2__item {
     margin: 0 15px; } }
 
 @media (max-width: 767px) {
@@ -850,8 +922,13 @@ footer {
     display: block;
     width: 100%;
     text-align: center; }
-  footer ul .social-icon {
-    margin: 0 6% 15px; } }
+  /*footer ul .social-icon {
+        margin: 0 6% 15px;
+    }*/
+  footer .ya-share2__container_size_m .ya-share2__item {
+    margin: 0 6% 15px; }
+    footer .ya-share2__container_size_m .ya-share2__item:last-child {
+      margin: 0 6% 15px; } }
 
 @media (max-width: 480px) {
   header {
