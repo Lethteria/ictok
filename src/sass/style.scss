@@ -581,6 +581,45 @@ nav.nav-open {
     }
 }
 
+//
+.payment {
+    margin-bottom: 30px;
+    padding-left: 40px;
+    color: darken($blue-color, 4%);
+    border: 2px solid #eeeeee;
+    h3 {
+        margin: 3% 0;
+        color: darken($blue-color, 3%);
+        @include strip(darken($blue-color, 3%),10%);
+    }
+}
+.payment-item {
+    margin-bottom: 15px;
+    font-size: 18px;
+    img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    span {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+.payment-cashless {
+    margin: 20px 0 10px;
+    p {
+        font-size: 16px;
+    }
+    .fa-check-square-o:before {
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: bottom;
+        color: lighten($blue-light-color,1%);
+    }
+    //margin-left: 100px;
+}
+
 //---------------SECTION comment-form------------//
 .comment-form {
     background-color:  #eeeeee;
@@ -869,9 +908,6 @@ footer {
     .stock-animation {
         width: 55%;
     }
-       /* .navbar-toggle {
-            display: none;
-        }*/
     .product-item-title {
         height: auto;
     }
@@ -910,12 +946,27 @@ footer {
             font-size: 24px;
         }
     }
-    /*footer ul .social-icon {
-        margin: 0 15px;
-    }*/
     footer .ya-share2__container_size_m {
         .ya-share2__item {
             margin: 0 15px;
+        }
+    }
+    .payment-item {
+        font-size: 16px;
+        img {
+            height: 40px;
+        }
+    }
+    .payment-cashless {
+        margin-top: 10px;
+        p {
+            font-size: 14px;
+        }
+        h4 {
+            font-size: 16px;
+        }
+        .fa-check-square-o:before {
+            font-size: 20px;
         }
     }
 }
@@ -1046,11 +1097,29 @@ footer {
         }
     }
     #back-to-top {
-        //bottom: 20px;
         right: 12px;
         img {
             width: 70%;
         }
+    }
+    .payment {
+        h3 {
+            margin: 30px 0;
+        }
+    }
+    .payment-item {
+        margin-bottom: 5px;
+        img {
+            height: 30px;
+        }
+        span {
+            height: 30px;
+            line-height: 30px;
+            vertical-align: sub;
+        }
+    }
+    .payment-cashless .fa-check-square-o:before {
+        font-size: 18px;
     }
 }
 @media (max-width: 560px){
@@ -1135,10 +1204,33 @@ footer {
     .our-certificate-item {
         width: 100%;
     }
+    .payment {
+        padding-left: 0;
+        h3 {
+            text-align: center;
+            &:after {
+                display: none;
+            }
+        }
+    }
+    .payment-item {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    .payment-cashless {
+        h4 {
+            text-align: center;
+        }
+        .fa-icon {
+            margin-left: 28%;
+        }
+    }
 }
 
-/*@media  screen and (min-width : 320px) and (max-width : 480px) {}
-@media  screen and (min-width : 481px) and (max-width : 700px) {}
-@media  screen and (min-width : 710px) and (max-width : 1000px) {}
-@media  screen and (min-width : 1001px) and (max-width : 1024px) {}*/
 
